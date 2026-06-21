@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haintrain</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="/" class="active">Home</a>
+        <a href="/blog.html">Blog</a>
+        <a href="https://joeyhain.org/">joeyhain.org →</a>
+        <a href="https://discord.com/invite/rJhQZHr">Discord</a>
+        <a href="https://www.youtube.com/channel/UCtqkp1LCp0gQH44Kyj2kDYw?sub_confirmation=1">Subscribe</a>
+        <!-- one <a> per page on the site, duplicate as you add pages -->
+      </nav>
+    </aside>
+
+    <main class="content">
+      <h1>Haintrain</h1>
+      <h2>Public Transport Videos</h2>
+      <p>
+        Hi! Welcome to the 'new' Haintrain site. The layout has changed and some pages are no longer...
+      </p>
+            <!-- Paste this block into any page, e.g. inside <main class="content"> -->
+
+<section class="videos">
+  <h2>Latest videos</h2>
+  <div id="video-list" class="video-list">Loading…</div>
+</section>
+
+<script>
+  (function () {
+    var container = document.getElementById('video-list');
+
+    fetch('/api/videos')
+      .then(function (r) { return r.json(); })
+      .then(function (videos) {
+        if (!videos.length) {
+          container.textContent = 'No videos yet.';
+          return;
+        }
+        container.innerHTML = '';
+        videos.forEach(function (v) {
+          var a = document.createElement('a');
+          a.className = 'video-card';
+          a.href = v.url;
+          a.target = '_blank';
+          a.rel = 'noopener';
+
+          var img = document.createElement('img');
+          img.src = v.thumbnail;
+          img.alt = v.title;
+          img.loading = 'lazy';
+
+          var title = document.createElement('span');
+          title.className = 'video-title';
+          title.textContent = v.title;
+
+          a.appendChild(img);
+          a.appendChild(title);
+          container.appendChild(a);
+        });
+      })
+      .catch(function () {
+        container.textContent = "Couldn't load videos right now.";
+      });
+  })();
+</script>
+    </main>
+  </div>
+
+</body>
+</html>
