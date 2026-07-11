@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haintrain</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="/" class="active">Home</a>
+        <a href="/blog.html">Blog</a>
+        <a href="https://discord.com/invite/rJhQZHr">Discord</a>
+        <a href="https://www.youtube.com/channel/UCtqkp1LCp0gQH44Kyj2kDYw?sub_confirmation=1">Subscribe</a>
+        <a href="https://joeyhain.org/">joeyhain.org →</a>
+        <!-- one <a> per page on the site, duplicate as you add pages -->
+      </nav>
+    </aside>
+
+    <main class="content">
+      <h1>Blog</h1>
+      <p>Recent blogposts</p>
+            <!-- Paste this block into any page, e.g. inside <main class="content"> -->
+       <nav>
+        <a href="/blog/sydneytrainsleaks.html">Sydney Trains Leaks</a>
+        <a href="/blog/riwl.html">Restore Inner West Line are sensationalist liars</a>
+        <a href="/blog/swm.html">Southwest Metro station design and precinct plans</a>
+        <a href="/blog/wsa.html">Western Sydney Airport Metro PUDCLPs</a>
+        <a href="/blog/map.html">Sydney Rail Map - My version</a>
+        <a href="/blog/service.html">Sydney Trains service diagram (2017 timetable)</a>
+       </nav>
+    </main>
+  </div>
+
+</body>
+</html>
