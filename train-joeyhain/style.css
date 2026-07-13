@@ -166,3 +166,15 @@ footer {
 .post-card:hover .post-card-title {
   text-decoration: underline;
 }
+
+.image-text {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.image-text img {
+  width: 50%;
+  flex-shrink: 0;
+  max-width: 50%;
+}
