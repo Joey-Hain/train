@@ -174,7 +174,7 @@ footer {
 }
 
 .image-text img {
-  width: 50%;
+  width: 60%;
   flex-shrink: 0;
   max-width: 50%;
 }
