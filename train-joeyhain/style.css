@@ -30,6 +30,7 @@ body {
 .sidebar nav {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.6rem;
 }
 .sidebar nav a {
@@ -47,7 +48,7 @@ body {
 
 .content {
   flex: 1;
-  min-width: 0; /* lets long content shrink instead of overflowing the flex item */
+  min-width: 0;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -66,7 +67,6 @@ footer {
   color: var(--muted);
 }
 
-/* Sidebar moves above content and goes horizontal on narrow screens */
 @media (max-width: 700px) {
   .layout {
     flex-direction: column;
@@ -83,7 +83,7 @@ footer {
   }
 }
 
-/* Append this to style.css */
+/* Videos */
 
 .videos {
   margin-top: 2rem;
@@ -106,6 +106,8 @@ footer {
 
 .video-card img {
   width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
   border-radius: 6px;
   display: block;
 }
@@ -121,93 +123,7 @@ footer {
   text-decoration: underline;
 }
 
-:root {
-  --max-width: 1100px;
-  --text: #111;
-  --muted: #555;
-  --rule: #eee;
-}
-
-html, body { height: 100%; margin: 0; padding: 0; }
-
-body {
-  font-family: Helvetica, Arial, sans-serif;
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.layout {
-  display: flex;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem;
-  gap: 3rem;
-  align-items: flex-start;
-}
-
-.sidebar {
-  flex: 0 0 180px;
-  position: sticky;
-  top: 2rem;
-}
-.sidebar nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.6rem;
-}
-.sidebar nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-.sidebar nav a:hover {
-  text-decoration: underline;
-}
-.sidebar nav a.active {
-  color: var(--text);
-  font-weight: bold;
-}
-
-.content {
-  flex: 1;
-  min-width: 0; /* lets long content shrink instead of overflowing the flex item */
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-.content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-h1 { margin-top: 0; }
-
-footer {
-  margin-top: 2rem;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-/* Sidebar moves above content and goes horizontal on narrow screens */
-@media (max-width: 700px) {
-  .layout {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .sidebar {
-    position: static;
-    flex: 0 0 auto;
-  }
-  .sidebar nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-}
-
-/* Append to style.css — blog card grid */
+/* Blog card grid */
 
 .post-grid {
   display: grid;
@@ -229,7 +145,7 @@ footer {
   aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: 6px;
-  border: 1px solid var(--rule);
+  border: 1px solid #ccc;
   display: block;
 }
 
@@ -238,7 +154,7 @@ footer {
   aspect-ratio: 16/9;
   background: var(--rule);
   border-radius: 6px;
-  border: 1px solid var(--rule);
+  border: 1px solid #ccc;
 }
 
 .post-card-title {
